@@ -1,0 +1,26 @@
+.create-product-wrapper {
+  text-align: center;
+}
+
+.create-product-wrapper p {
+  font-size: 0.85em;
+  line-height: 2;
+  margin-top: 10px;
+}
+
+.default-button {
+  color: white;
+  background-color: #7047eb;
+  width: 100%;
+  padding: 0.5em 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 400;
+  margin-top: 1em;
+}
+
+.default-button:hover,
+.default-button:focus {
+  cursor: pointer;
+  background-color: #7e59ed;
+}
