@@ -1,4 +1,5 @@
 import CreateAProductCard from "../../components/CreateAProduct/CreateAProductCard";
+import Header from "../../components/Header/Header";
 import "./Store.css";
 
 export default function Store() {
@@ -6,7 +7,7 @@ export default function Store() {
 
   return (
     <div className="store-section-wrapper">
-      <h2 className="page-title">Products</h2>
+      <Header />
       <div className="create-a-product-card">
         <CreateAProductCard />
       </div>

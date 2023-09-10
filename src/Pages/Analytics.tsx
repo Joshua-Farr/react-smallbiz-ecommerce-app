@@ -1,3 +1,11 @@
+import Header from "../components/Header/Header";
+
 export default function Analytics() {
-  return <h1>Analytics Page</h1>;
+  //   const [hasProduct, setHasProduct] = React.useState(false);
+
+  return (
+    <div className="store-section-wrapper">
+      <Header />
+    </div>
+  );
 }

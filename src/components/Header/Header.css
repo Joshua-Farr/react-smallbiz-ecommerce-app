@@ -1,0 +1,36 @@
+.header-wrapper {
+  display: flex;
+}
+
+.header-icons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.mui-icon {
+  width: 25px !important;
+  height: 25px !important;
+  color: gray;
+  margin-left: 10px;
+}
+
+.plus-icon {
+  color: #7047eb;
+  height: 400px;
+  width: 200px;
+  width: 45px !important;
+  height: 45px !important;
+}
+
+.mui-icon:hover,
+.mui-icon:focus {
+  cursor: pointer;
+  /* background-color: #f7f7f8; */
+}
+
+.plus-icon:hover,
+.plus-icon:focus {
+  cursor: pointer;
+  background-color: white;
+}
