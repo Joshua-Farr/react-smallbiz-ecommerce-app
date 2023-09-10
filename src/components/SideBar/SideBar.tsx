@@ -1,5 +1,5 @@
 import "./SideBar.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function SideBar() {
   return (
@@ -10,7 +10,7 @@ export default function SideBar() {
           Home
         </NavLink>
         <NavLink to="/store" className="sidebar-link">
-          Store
+          Products
         </NavLink>
         <NavLink to="/analytics" className="sidebar-link">
           Analytics
