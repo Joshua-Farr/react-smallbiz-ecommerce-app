@@ -1,4 +1,4 @@
-import TestimonialCard from "../components/TestimonialCard";
+import TestimonialCard from "../../components/TestimonialCard/TestimonialCard";
 import "./Login.css";
 
 export default function Login() {
