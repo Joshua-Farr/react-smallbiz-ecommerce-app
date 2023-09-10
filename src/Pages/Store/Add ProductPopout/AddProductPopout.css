@@ -9,12 +9,28 @@
 .addproduct-title {
   font-weight: 500;
   font-size: 1.5rem;
+  margin-bottom: 2em;
+}
+
+.question-section p {
+  margin-bottom: 2em;
 }
 
 /* max-width: 623px; */
 
 .add-product-text {
   font-size: 0.875rem;
+}
+
+.input-label-text {
+  display: inline-block;
+  margin-bottom: 0.5em;
+  color: black;
+}
+
+.beginning {
+  margin-bottom: 1em;
+  margin-left: 1em;
 }
 
 .add-product-section-header {
@@ -38,6 +54,30 @@
   height: 100vh;
   min-width: 623px;
   padding: 2em 3em;
+  position: relative;
+}
+
+.close-add-product-popup {
+  position: absolute;
+  top: 30px;
+  right: 63px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #bfbfc2;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-add-product-popup:hover,
+.close-add-product-popup:focus {
+  cursor: pointer;
+  background-color: #f7f7f8;
+  color: black;
 }
 
 .dark-side-of-screen {
@@ -56,4 +96,32 @@
   height: 38px;
   border: 1px solid #bdbbbb;
   padding-left: 10px;
+  margin-bottom: 0.5em;
+}
+
+.pricing-box p {
+  margin: 0;
+}
+
+.pricing-box {
+  border: 1px solid #bdbbbb;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.pricing-box:hover,
+.pricing-box:focus {
+  border: 3px solid #7047eb;
+  cursor: pointer;
+}
+
+.pricing-type-boxes {
+  display: grid;
+  grid-template-columns: 250px 250px;
+  grid-gap: 1em;
+  margin-bottom: 1em;
 }
