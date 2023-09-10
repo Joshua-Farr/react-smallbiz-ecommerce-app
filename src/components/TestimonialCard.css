@@ -1,0 +1,42 @@
+.testimonial-wrapper {
+  max-width: 360px;
+  background-color: white;
+  border-bottom: 4px solid #7e59ed;
+  padding: 2em;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  text-align: left;
+  color: rgb(112, 112, 112);
+}
+
+.testimonial-image {
+  border-radius: 50%;
+  border: 1px solid black;
+  height: 45px;
+  width: 45px;
+}
+
+.testimonial-person-info {
+  display: flex;
+  align-items: center;
+  margin-top: 7em;
+}
+
+.testimonial-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.testimonial-website {
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-align: left;
+  color: rgb(112, 112, 112);
+}
+
+.testimonial-person-text {
+  margin-left: 0.5em;
+}
