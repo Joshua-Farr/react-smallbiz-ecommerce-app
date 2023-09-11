@@ -1,0 +1,41 @@
+.webpage-wrapper {
+  min-height: 100%;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.store-header-img {
+  height: 245px;
+  background-color: #f7f7f8;
+  width: 100%;
+}
+
+.subscribe-form-btn {
+  background-color: #25252d;
+  margin-left: 0.5em;
+  color: white;
+  border-radius: 8px;
+  padding: 0.25em 0.5em;
+  font-size: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.store-logo {
+  height: 80px;
+  width: 80px;
+  background-color: #ff7d52;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  text-align: center;
+  font-weight: 500;
+  margin-top: -40px;
+  margin-bottom: 0.75em;
+}
