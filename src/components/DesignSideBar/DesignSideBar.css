@@ -1,0 +1,82 @@
+.design-sidebar {
+  height: 100vh;
+  /* border: 2px solid red; */
+  max-width: 330px;
+  background-color: #f7f7f8;
+  font-size: 0.875rem;
+  padding: 2em;
+  font-weight: 500;
+  color: #25252d;
+  padding-top: 3em;
+}
+
+.top-info-toggle {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 0.5em;
+}
+
+.switch-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: 0.25em;
+}
+
+.design-description {
+  margin-top: 0.5em;
+  width: 100%;
+  border-radius: 8px;
+  height: 38px;
+  border: 1px solid #bdbbbb;
+  padding-left: 10px;
+  margin-bottom: 0.5em;
+}
+
+.design-description:focus {
+  outline-color: #7047eb;
+}
+
+.secondary {
+  display: flex;
+  flex-direction: column;
+}
+
+.switch-group:focus,
+.switch-group:hover {
+  background-color: #e8e8ed;
+  cursor: pointer;
+}
+
+.thin-writing {
+  font-weight: 400;
+}
+
+.switch-group > select {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.switch-group > select:hover,
+.switch-group > select:focus {
+  cursor: pointer;
+}
+
+.design-sidebar > br {
+  background-color: green;
+}
+
+.back-icon-design {
+  color: #a2a2b6 !important;
+  margin-left: 0.5em;
+  margin-bottom: 1.25em;
+}
+
+.back-icon-design:hover,
+.back-icon-design:focus {
+  cursor: pointer;
+  color: black !important;
+}
