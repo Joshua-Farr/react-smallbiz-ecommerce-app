@@ -1,0 +1,18 @@
+.product-search-bar {
+  border-radius: 8px;
+  height: 38px;
+  border: 1px solid transparent;
+  padding-left: 10px;
+  margin-bottom: 0.5em;
+  color: #25252d;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-top: 2em;
+  margin-right: 5.75em;
+}
+
+.product-search-bar:focus,
+.product-search-bar:hover {
+  background-color: #f7f7f8;
+  outline-width: 0;
+}

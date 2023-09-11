@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <div className="store-section-wrapper">
       <Header />
+      <h1>Analytics & user data goes here</h1>
     </div>
   );
 }
