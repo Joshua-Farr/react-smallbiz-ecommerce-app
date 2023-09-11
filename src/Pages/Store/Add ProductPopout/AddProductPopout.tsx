@@ -1,18 +1,21 @@
 import "./AddProductPopout.css";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+// import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import DragDropFile from "../../../components/DragDropFile/DragDropFile";
 
 export default function AddProductPopout() {
   return (
     <div className="full-screen">
       <div className="dark-side-of-screen"></div>
       <div className="add-product-popup-wrapper">
+        <div className="publish-section">
+          <button>Publish product</button>
+        </div>
         <span className="close-add-product-popup">x</span>
         <h2 className="addproduct-title">Add Product</h2>
         <p className="add-product-text beginning">
           Add a new product to your store
         </p>
-
         <form>
           {/* Basic Info Section */}
           <div className="question-section">
@@ -79,17 +82,6 @@ export default function AddProductPopout() {
                 </div>
               </div>
 
-              {/* <input
-                id="name"
-                className="questions-input"
-                type="text"
-                placeholder=""
-                required
-              ></input>
-              <p className="add-product-text">
-                Select the pricing model for this product
-              </p> */}
-
               <label htmlFor="price" className="input-label-text">
                 Price
               </label>
@@ -126,6 +118,7 @@ export default function AddProductPopout() {
               <ArrowDropUpIcon />
             </div>
             <div className="section-questions">
+              <DragDropFile />
               <p className="add-product-text">
                 Add up to 10 images to your product. Used to represent your
                 product during checkout, in email, social sharing and more.
@@ -140,6 +133,7 @@ export default function AddProductPopout() {
               <ArrowDropUpIcon />
             </div>
             <div className="section-questions">
+              <DragDropFile />
               <p className="add-product-text">
                 Upload an unlimited number of files to your product. Your
                 customers will be given access to them after purchase.

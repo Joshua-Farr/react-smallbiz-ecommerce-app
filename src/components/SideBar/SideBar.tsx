@@ -12,8 +12,8 @@ export default function SideBar() {
         <NavLink to="/store" className="sidebar-link">
           Products
         </NavLink>
-        <NavLink to="/analytics" className="sidebar-link">
-          Analytics
+        <NavLink to="/design" className="sidebar-link">
+          Design
         </NavLink>
       </ul>
     </div>

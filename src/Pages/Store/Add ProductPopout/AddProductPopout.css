@@ -1,9 +1,10 @@
 .full-screen {
   display: flex;
-}
-
-.add-product-popup-wrapper {
-  margin-left: auto;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0;
+  z-index: 100;
 }
 
 .addproduct-title {
@@ -51,10 +52,15 @@
 }
 
 .add-product-popup-wrapper {
+  margin-left: auto;
+  overflow-y: auto;
   height: 100vh;
   min-width: 623px;
   padding: 2em 3em;
+  padding-bottom: 10em;
   position: relative;
+  background-color: white;
+  box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.25);
 }
 
 .close-add-product-popup {
@@ -73,6 +79,31 @@
   justify-content: center;
 }
 
+.publish-section {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f7f7f8;
+  padding: 1.5em 2em;
+}
+
+.publish-section button {
+  color: white;
+  background-color: #7e59ed;
+  width: 100%;
+  padding: 0.5em 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 400;
+}
+
+.publish-section button:hover,
+.publish-section button:focus {
+  cursor: pointer;
+}
+
 .close-add-product-popup:hover,
 .close-add-product-popup:focus {
   cursor: pointer;
@@ -81,9 +112,7 @@
 }
 
 .dark-side-of-screen {
-  background-color: #e5e5e5;
   width: 100%;
-  opacity: 0.5;
 }
 
 .section-questions {
