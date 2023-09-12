@@ -8,7 +8,7 @@ export default function UserWebpage() {
       </div>
 
       <div className="store-logo">MR</div>
-      <h1 className="store-name">Sample Store</h1>
+      <h1 className="store-name">Store Name Here</h1>
       <p className="store-description">
         Discover a world of digital treasures at our E-commerce store. Instantly
         download top-quality digital products for all your needs. Shop now!

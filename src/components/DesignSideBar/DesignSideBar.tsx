@@ -1,4 +1,5 @@
 import Switch from "@mui/material/Switch";
+import { NavLink } from "react-router-dom";
 import "./DesignSideBar.css";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
@@ -6,7 +7,9 @@ export default function DesignSideBar() {
   return (
     <>
       <div className="design-sidebar">
-        <KeyboardBackspaceIcon className="back-icon-design" />
+        <NavLink to="/">
+          <KeyboardBackspaceIcon className="back-icon-design" />
+        </NavLink>
         {/* <hr></hr> */}
         <div className="switch-group">
           <span>Show store header</span>
