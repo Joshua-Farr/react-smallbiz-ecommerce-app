@@ -5,7 +5,7 @@ import "./App.css";
 // import Layout from "./Layout/Layout.tsx";
 // import Home from "./Pages/Home.tsx";
 // import Store from "./Pages/Store/Store.tsx";
-// import Design from "./Pages/Design.tsx";
+import Design from "./Pages/Design/Design.tsx";
 // import DesignSideBar from "./components/DesignSideBar/DesignSideBar.tsx";
 import UserWebpage from "./components/UserWebpage/UserWebpage.tsx";
 
@@ -22,6 +22,7 @@ export default function App() {
     //   </Routes>
     // </BrowserRouter>
     // <DesignSideBar />
-    <UserWebpage />
+    // <UserWebpage />
+    <Design />
   );
 }

@@ -16,14 +16,18 @@ export default function UserWebpage() {
 
       <div className="subscribe-form">
         <form action="">
-          <input className="subscribe-form-input" type="text" />
+          <input
+            className="subscribe-form-input"
+            type="email"
+            placeholder="Enter your email address..."
+          />
           <button type="submit" className="subscribe-form-btn">
             Subscribe
           </button>
         </form>
       </div>
-      <div>Store content goes here!</div>
-      <h5>Powered by MintRoad</h5>
+      <div className="">Store content goes here!</div>
+      <h5 className="powered-by">Powered by MintRoad</h5>
     </div>
   );
 }
