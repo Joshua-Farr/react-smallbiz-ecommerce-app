@@ -81,3 +81,13 @@
   position: absolute;
   bottom: 0;
 }
+
+.product-gallery {
+  width: 100%;
+  padding: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}

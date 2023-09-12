@@ -8,6 +8,7 @@ import Store from "./Pages/Store/Store.tsx";
 import Design from "./Pages/Design/Design.tsx";
 // import DesignSideBar from "./components/DesignSideBar/DesignSideBar.tsx";
 import UserWebpage from "./components/UserWebpage/UserWebpage.tsx";
+import ProductCard from "./components/ProductCard/ProductCard.tsx";
 
 export default function App() {
   // return <Login />;
@@ -21,5 +22,6 @@ export default function App() {
         <Route path="design" element={<Design />}></Route>
       </Routes>
     </BrowserRouter>
+    // <ProductCard />
   );
 }

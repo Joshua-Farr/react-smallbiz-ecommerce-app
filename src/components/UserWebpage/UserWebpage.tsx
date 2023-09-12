@@ -1,3 +1,4 @@
+import ProductCard from "../ProductCard/ProductCard";
 import "./UserWebpage.css";
 
 export default function UserWebpage() {
@@ -26,7 +27,12 @@ export default function UserWebpage() {
           </button>
         </form>
       </div>
-      <div className="">Store content goes here!</div>
+      <div className="product-gallery">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
       <h5 className="powered-by">Powered by MintRoad</h5>
     </div>
   );
