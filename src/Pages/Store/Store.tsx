@@ -1,4 +1,4 @@
-import CreateAProductCard from "../../components/CreateAProduct/CreateAProductCard";
+// import CreateAProductCard from "../../components/CreateAProduct/CreateAProductCard";
 import Header from "../../components/Header/Header";
 import { useState } from "react";
 import "./Store.css";
@@ -6,7 +6,7 @@ import AddProductPopout from "./Add ProductPopout/AddProductPopout";
 import ProductListDisplay from "../../components/ProductListDisplay/ProductListDisplay";
 
 export default function Store() {
-  const [hasProduct, setHasProduct] = useState(false);
+  // const [hasProduct, setHasProduct] = useState(false);
 
   const [showAddProduct, setShowAddProduct] = useState(false);
 
@@ -16,7 +16,7 @@ export default function Store() {
 
   return (
     <div className="store-section-wrapper">
-      <Header />
+      <Header clickEvent={() => toggleProductAdd()} />
       {showAddProduct && <AddProductPopout />}
       {/* <div className="create-a-product-card">
         {!hasProduct && <CreateAProductCard />}
