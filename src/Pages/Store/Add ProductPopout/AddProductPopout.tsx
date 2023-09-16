@@ -1,19 +1,46 @@
 import "./AddProductPopout.css";
 // import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import React from "react";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import DragDropFile from "../../../components/DragDropFile/DragDropFile";
+
+type ProductFormState = {
+  name: string;
+  description: string;
+  price: number;
+  taxCategory: string;
+  productImages: string[];
+  files: string[];
+};
 
 type PopoutProps = {
   toggleProductAdd: () => void;
 };
 
 export default function AddProductPopout(closebtn: PopoutProps) {
+  const [productDetails, setProductDetails] = React.useState<ProductFormState>({
+    name: "",
+    description: "",
+    price: 0,
+    taxCategory: "",
+    productImages: [""],
+    files: [""],
+  });
+
+  function handleFormSubmit(event: React.FormEvent) {
+    event.preventDefault();
+    console.log("Submitted!", productDetails);
+    closebtn.toggleProductAdd();
+  }
+
   return (
     <div className="full-screen">
       <div className="dark-side-of-screen"></div>
       <div className="add-product-popup-wrapper">
         <div className="publish-section">
-          <button>Publish product</button>
+          <button type="submit" form="new-product-form">
+            Publish product
+          </button>
         </div>
         <span
           className="close-add-product-popup"
@@ -25,7 +52,7 @@ export default function AddProductPopout(closebtn: PopoutProps) {
         <p className="add-product-text beginning">
           Add a new product to your store
         </p>
-        <form>
+        <form id="new-product-form" onSubmit={handleFormSubmit}>
           {/* Basic Info Section */}
           <div className="question-section">
             <div className="add-product-section-header">
@@ -42,7 +69,14 @@ export default function AddProductPopout(closebtn: PopoutProps) {
                 className="questions-input"
                 type="text"
                 placeholder=""
-                required
+                // required
+                onChange={(e) => {
+                  // console.log(e.target.value);
+                  setProductDetails({
+                    ...productDetails,
+                    name: e.target.value,
+                  });
+                }}
               ></input>
               <p className="add-product-text">
                 Give your product a short and clear name. <br></br>
@@ -56,6 +90,13 @@ export default function AddProductPopout(closebtn: PopoutProps) {
                 className="questions-input"
                 type="text"
                 placeholder=""
+                onChange={(e) => {
+                  // console.log(e.target.value);
+                  setProductDetails({
+                    ...productDetails,
+                    description: e.target.value,
+                  });
+                }}
               ></input>
               <p className="add-product-text">
                 Give your product a short and clear description.
@@ -99,6 +140,13 @@ export default function AddProductPopout(closebtn: PopoutProps) {
                 className="questions-input"
                 type="number"
                 placeholder=""
+                onChange={(e) => {
+                  console.log(e.target.value);
+                  setProductDetails({
+                    ...productDetails,
+                    price: e.target.valueAsNumber,
+                  });
+                }}
               ></input>
               <label htmlFor="tax-category" className="input-label-text">
                 Tax category
@@ -107,6 +155,13 @@ export default function AddProductPopout(closebtn: PopoutProps) {
                 className="questions-input"
                 name="tax-category"
                 id="tax-category"
+                onChange={(e) => {
+                  console.log(e.target.value);
+                  setProductDetails({
+                    ...productDetails,
+                    taxCategory: e.target.value,
+                  });
+                }}
               >
                 <option value="digital-goods">
                   Digital goods or services (excluding ebooks)
