@@ -5,10 +5,10 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import "./Header.css";
 
 type HeaderProps = {
-  clickEvent: () => void;
+  toggleProductAdd: () => void;
 };
 
-export default function Header(props: HeaderProps) {
+export default function Header(clickMe: HeaderProps) {
   return (
     <div className="header-wrapper">
       <h2 className="page-title">Products</h2>
@@ -16,7 +16,7 @@ export default function Header(props: HeaderProps) {
         <SearchRoundedIcon className="mui-icon" />
         <NotificationsNoneRoundedIcon className="mui-icon" />
         <AddCircleIcon
-          onClick={() => props.clickEvent()}
+          onClick={() => clickMe.toggleProductAdd()}
           className="mui-icon plus-icon"
         />
       </div>

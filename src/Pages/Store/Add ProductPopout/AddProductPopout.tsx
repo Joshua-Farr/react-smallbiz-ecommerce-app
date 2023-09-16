@@ -3,7 +3,11 @@ import "./AddProductPopout.css";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import DragDropFile from "../../../components/DragDropFile/DragDropFile";
 
-export default function AddProductPopout() {
+type PopoutProps = {
+  toggleProductAdd: () => void;
+};
+
+export default function AddProductPopout(closebtn: PopoutProps) {
   return (
     <div className="full-screen">
       <div className="dark-side-of-screen"></div>
@@ -11,7 +15,12 @@ export default function AddProductPopout() {
         <div className="publish-section">
           <button>Publish product</button>
         </div>
-        <span className="close-add-product-popup">x</span>
+        <span
+          className="close-add-product-popup"
+          onClick={() => closebtn.toggleProductAdd()}
+        >
+          x
+        </span>
         <h2 className="addproduct-title">Add Product</h2>
         <p className="add-product-text beginning">
           Add a new product to your store

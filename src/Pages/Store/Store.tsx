@@ -16,8 +16,10 @@ export default function Store() {
 
   return (
     <div className="store-section-wrapper">
-      <Header clickEvent={() => toggleProductAdd()} />
-      {showAddProduct && <AddProductPopout />}
+      <Header toggleProductAdd={toggleProductAdd} />
+      {showAddProduct && (
+        <AddProductPopout toggleProductAdd={toggleProductAdd} />
+      )}
       {/* <div className="create-a-product-card">
         {!hasProduct && <CreateAProductCard />}
       </div> */}
