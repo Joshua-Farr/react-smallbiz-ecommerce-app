@@ -25,12 +25,12 @@ export default function Design() {
     console.log(siteSettings);
   }
 
-  changeSettings("header", false);
+  // changeSettings("header", false);
 
   return (
     // <div className="store-section-wrapper">
     <div className="design-section-wrapper">
-      <DesignSideBar changeSettings={changeSettings} />
+      <DesignSideBar />
       <div className="sample-view-section">
         {/* <div className="buttons-sample-view">
             <RemoveRedEyeOutlinedIcon sx={{ color: "grey" }} /> */}
