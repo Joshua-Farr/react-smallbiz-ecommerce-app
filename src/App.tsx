@@ -33,14 +33,13 @@ type StoreSettings = {
 export default function App() {
   // return <Login />;
   const [productList, setProductList] = React.useState<Array<Products>>([]);
-  const [storeSettings, setStoreSettings] = React.useState<
-    <StoreSettings
-  >();
+  // const [storeSettings, setStoreSettings] = React.useState<
+  //   <StoreSettings>();
 
   const UserContext = React.createContext();
 
   return (
-    <UserContext.Provider value={{ productList, storeSettings }}>
+    <UserContext.Provider value={{ productList }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

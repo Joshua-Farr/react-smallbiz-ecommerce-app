@@ -1,11 +1,12 @@
 import DesignSideBar from "../../components/DesignSideBar/DesignSideBar";
+import React from "react";
 import Header from "../../components/Header/Header";
 import UserWebpage from "../../components/UserWebpage/UserWebpage";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import "./Design.css";
 
 export default function Design() {
-  //   const [hasProduct, setHasProduct] = React.useState(false);
+  const [siteSettings, setSiteSettings] = React.useState();
 
   const settings = {
     header: true,
