@@ -4,10 +4,16 @@ import { NavLink } from "react-router-dom";
 import "./DesignSideBar.css";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
-export default function DesignSideBar() {
-  function handleChange(value: String): void {
+interface DesignSideBarProps {
+  setNewSiteSettings: (key: string, value: any) => void;
+}
+
+export const DesignSideBarReact: React.FC<DesignSideBarProps> = ({
+  setNewSiteSettings,
+}) => {
+  const handleChange = (value: String): void => {
     console.log(value);
-  }
+  };
 
   return (
     <>
@@ -22,7 +28,9 @@ export default function DesignSideBar() {
             defaultChecked
             color="secondary"
             size="small"
-            onChange={() => handleChange("header")}
+            onChange={() => {
+              setNewSiteSettings("header", true);
+            }}
           />
         </div>
         <div className="switch-group">
@@ -90,4 +98,4 @@ export default function DesignSideBar() {
       </div>
     </>
   );
-}
+};

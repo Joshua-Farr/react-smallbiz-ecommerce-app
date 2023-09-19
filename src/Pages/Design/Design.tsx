@@ -1,5 +1,5 @@
 import DesignSideBar from "../../components/DesignSideBar/DesignSideBar";
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/Header/Header";
 import UserWebpage from "../../components/UserWebpage/UserWebpage";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
@@ -9,7 +9,7 @@ export default function Design() {
   const [siteSettings, setSiteSettings] = React.useState({
     header: true,
     logo: true,
-    name: true,
+    name: false,
     description: true,
     descriptionText: "string",
     subscriberForm: true,
@@ -17,20 +17,14 @@ export default function Design() {
     showProductDetails: true,
   });
 
-  function changeSettings(key: string, value: any): void {
-    console.log(siteSettings);
-    const tempObj = { ...siteSettings, key: value };
-    setSiteSettings(tempObj);
-    console.log("----------------");
-    console.log(siteSettings);
-  }
-
-  // changeSettings("header", false);
+  const setNewSiteSettings = (key: string, value: any) => {
+    setSiteSettings({ ...siteSettings, [key]: value });
+  };
 
   return (
     // <div className="store-section-wrapper">
     <div className="design-section-wrapper">
-      <DesignSideBar />
+      <DesignSideBar setNewSiteSettings={setNewSiteSettings} />
       <div className="sample-view-section">
         {/* <div className="buttons-sample-view">
             <RemoveRedEyeOutlinedIcon sx={{ color: "grey" }} /> */}
