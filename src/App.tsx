@@ -19,14 +19,28 @@ type Products = {
   files: string[];
 };
 
+type StoreSettings = {
+  header: boolean;
+  logo: boolean;
+  name: boolean;
+  description: boolean;
+  descriptionText: string;
+  subscriberForm: boolean;
+  thumbnailSize: string;
+  showProductDetails: boolean;
+};
+
 export default function App() {
   // return <Login />;
   const [productList, setProductList] = React.useState<Array<Products>>([]);
+  const [storeSettings, setStoreSettings] = React.useState<
+    <StoreSettings
+  >();
 
   const UserContext = React.createContext();
 
   return (
-    <UserContext.Provider value={productList}>
+    <UserContext.Provider value={{ productList, storeSettings }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

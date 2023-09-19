@@ -33,7 +33,16 @@ export default function Design() {
             <div className="circle minimize-circle"></div>
             <div className="circle close-circle"></div>
           </div>
-          <UserWebpage settings={settings} />
+          <UserWebpage
+            header={settings.header}
+            logo={settings.logo}
+            name={settings.name}
+            description={settings.description}
+            descriptionText={settings.descriptionText}
+            subscriberForm={settings.subscriberForm}
+            thumbnailSize={settings.thumbnailSize}
+            showProductDetails={settings.showProductDetails}
+          />
         </div>
       </div>
     </div>
