@@ -6,23 +6,31 @@ import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import "./Design.css";
 
 export default function Design() {
-  const [siteSettings, setSiteSettings] = React.useState();
-
-  const settings = {
+  const [siteSettings, setSiteSettings] = React.useState({
     header: true,
     logo: true,
-    name: false,
+    name: true,
     description: true,
     descriptionText: "string",
     subscriberForm: true,
     thumbnailSize: "string",
     showProductDetails: true,
-  };
+  });
+
+  function changeSettings(key: string, value: any): void {
+    console.log(siteSettings);
+    const tempObj = { ...siteSettings, key: value };
+    setSiteSettings(tempObj);
+    console.log("----------------");
+    console.log(siteSettings);
+  }
+
+  changeSettings("header", false);
 
   return (
     // <div className="store-section-wrapper">
     <div className="design-section-wrapper">
-      <DesignSideBar />
+      <DesignSideBar changeSettings={changeSettings} />
       <div className="sample-view-section">
         {/* <div className="buttons-sample-view">
             <RemoveRedEyeOutlinedIcon sx={{ color: "grey" }} /> */}
@@ -35,14 +43,14 @@ export default function Design() {
             <div className="circle close-circle"></div>
           </div>
           <UserWebpage
-            header={settings.header}
-            logo={settings.logo}
-            name={settings.name}
-            description={settings.description}
-            descriptionText={settings.descriptionText}
-            subscriberForm={settings.subscriberForm}
-            thumbnailSize={settings.thumbnailSize}
-            showProductDetails={settings.showProductDetails}
+            header={siteSettings.header}
+            logo={siteSettings.logo}
+            name={siteSettings.name}
+            description={siteSettings.description}
+            descriptionText={siteSettings.descriptionText}
+            subscriberForm={siteSettings.subscriberForm}
+            thumbnailSize={siteSettings.thumbnailSize}
+            showProductDetails={siteSettings.showProductDetails}
           />
         </div>
       </div>
