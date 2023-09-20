@@ -1,6 +1,7 @@
 import "./AddProductPopout.css";
 // import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import React from "react";
+import { useContext } from "react";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import DragDropFile from "../../../components/DragDropFile/DragDropFile";
 

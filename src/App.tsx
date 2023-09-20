@@ -3,7 +3,7 @@ import Login from "./Pages/Onboarding/Login.tsx";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import React from "react";
 import Layout from "./Layout/Layout.tsx";
-import Home from "./Pages/Home.tsx";
+import Home from "./Pages/Home/Home.tsx";
 import Store from "./Pages/Store/Store.tsx";
 import Design from "./Pages/Design/Design.tsx";
 // import DesignSideBar from "./components/DesignSideBar/DesignSideBar.tsx";
@@ -30,13 +30,13 @@ type StoreSettings = {
   showProductDetails: boolean;
 };
 
+export const UserContext = React.createContext();
+
 export default function App() {
   // return <Login />;
   const [productList, setProductList] = React.useState<Array<Products>>([]);
   // const [storeSettings, setStoreSettings] = React.useState<
   //   <StoreSettings>();
-
-  const UserContext = React.createContext();
 
   return (
     <UserContext.Provider value={{ productList }}>
