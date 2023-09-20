@@ -74,7 +74,7 @@
 }
 
 .store-description {
-  max-width: 60ch;
+  max-width: 60ch !important;
   text-align: center;
   margin-top: 1.25em;
   margin-bottom: 1.5em;

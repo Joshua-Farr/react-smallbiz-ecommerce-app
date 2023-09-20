@@ -6,7 +6,7 @@ import "./DesignSideBar.css";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 interface DesignSideBarProps {
-  setNewSiteSettings: (key: string) => void;
+  setNewSiteSettings: (key: string, value: any) => void;
   siteSettings: {
     header: boolean;
     logo: boolean;
@@ -76,7 +76,14 @@ export default function DesignSideBarReact({
           <p className="thin-writing">
             Give your store a short, clear description.
           </p>
-          <input className="design-description" type="text"></input>
+          <input
+            className="design-description"
+            onChange={(e) => {
+              e.preventDefault();
+              setNewSiteSettings("descriptionText", e.target.value);
+            }}
+            type="text"
+          ></input>
         </div>
 
         <div className="switch-group">

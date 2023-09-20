@@ -11,15 +11,21 @@ export default function Design() {
     logo: true,
     name: true,
     description: true,
-    descriptionText: "string",
+    descriptionText:
+      "Discover a world of digital treasures at our E-commerce store. Instantly download top-quality digital products for all your needs. Shop now!",
     subscribe: true,
     thumbnailSize: "string",
     details: true,
   });
 
-  const setNewSiteSettings = (key: string) => {
-    setSiteSettings({ ...siteSettings, [key]: !siteSettings[key] });
-    console.log("Toggled!!");
+  const setNewSiteSettings = (key: string, value: any) => {
+    console.log(key);
+    if (key !== "descriptionText") {
+      setSiteSettings({ ...siteSettings, [key]: !siteSettings[key] });
+      console.log("Toggled: ", key);
+    } else {
+      setSiteSettings({ ...siteSettings, descriptionText: value });
+    }
   };
 
   React.useEffect(() => {

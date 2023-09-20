@@ -24,11 +24,7 @@ export default function UserWebpage(settings: StoreSettings) {
       {settings.logo && <div className="store-logo">MR</div>}
       {settings.name && <h1 className="store-name">Store Name Here</h1>}
       {settings.description && (
-        <p className="store-description">
-          Discover a world of digital treasures at our E-commerce store.
-          Instantly download top-quality digital products for all your needs.
-          Shop now!
-        </p>
+        <p className="store-description">{settings.descriptionText}</p>
       )}
 
       {settings.subscribe && (
