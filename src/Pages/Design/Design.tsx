@@ -19,6 +19,7 @@ export default function Design() {
 
   const setNewSiteSettings = (key: string, value: any) => {
     setSiteSettings({ ...siteSettings, [key]: value });
+    console.log("Toggled!!");
   };
 
   return (

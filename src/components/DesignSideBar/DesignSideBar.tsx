@@ -1,4 +1,5 @@
 import Switch from "@mui/material/Switch";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 import "./DesignSideBar.css";
@@ -8,9 +9,15 @@ interface DesignSideBarProps {
   setNewSiteSettings: (key: string, value: any) => void;
 }
 
-export const DesignSideBarReact: React.FC<DesignSideBarProps> = ({
-  setNewSiteSettings,
-}) => {
+export default function DesignSideBarReact({ setNewSiteSettings }) {
+  const [switchStatus, setSwitchStatus] = React.useState({
+    header: true,
+    logo: true,
+    name: true,
+    description: true,
+    subscribe: true,
+  });
+
   const handleChange = (value: String): void => {
     console.log(value);
   };
@@ -29,8 +36,10 @@ export const DesignSideBarReact: React.FC<DesignSideBarProps> = ({
             color="secondary"
             size="small"
             onChange={() => {
-              setNewSiteSettings("header", true);
+              // setSwitchStatus(...switchStatus, [switchStatus.header]: !switchStatus.header.value )
+              setNewSiteSettings("header", switchStatus.header);
             }}
+            checked={switchStatus.header}
           />
         </div>
         <div className="switch-group">
@@ -39,7 +48,8 @@ export const DesignSideBarReact: React.FC<DesignSideBarProps> = ({
             color="secondary"
             size="small"
             defaultChecked
-            onChange={() => handleChange("logo")}
+            onChange={() => setNewSiteSettings("logo", switchStatus.logo)}
+            checked={switchStatus.logo}
           />
         </div>
         <div className="switch-group">
@@ -48,7 +58,8 @@ export const DesignSideBarReact: React.FC<DesignSideBarProps> = ({
             color="secondary"
             size="small"
             defaultChecked
-            onChange={() => handleChange("name")}
+            onChange={() => setNewSiteSettings("logo", switchStatus.name)}
+            checked={switchStatus.name}
           />
         </div>
         <div className="switch-group secondary">
@@ -98,4 +109,4 @@ export const DesignSideBarReact: React.FC<DesignSideBarProps> = ({
       </div>
     </>
   );
-};
+}
