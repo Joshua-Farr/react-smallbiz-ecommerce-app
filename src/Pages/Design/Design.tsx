@@ -9,23 +9,30 @@ export default function Design() {
   const [siteSettings, setSiteSettings] = React.useState({
     header: true,
     logo: true,
-    name: false,
+    name: true,
     description: true,
     descriptionText: "string",
-    subscriberForm: true,
+    subscribe: true,
     thumbnailSize: "string",
-    showProductDetails: true,
+    details: true,
   });
 
-  const setNewSiteSettings = (key: string, value: any) => {
-    setSiteSettings({ ...siteSettings, [key]: value });
+  const setNewSiteSettings = (key: string) => {
+    setSiteSettings({ ...siteSettings, [key]: !siteSettings[key] });
     console.log("Toggled!!");
   };
+
+  React.useEffect(() => {
+    console.log(siteSettings);
+  }, [siteSettings]);
 
   return (
     // <div className="store-section-wrapper">
     <div className="design-section-wrapper">
-      <DesignSideBar setNewSiteSettings={setNewSiteSettings} />
+      <DesignSideBar
+        setNewSiteSettings={setNewSiteSettings}
+        siteSettings={siteSettings}
+      />
       <div className="sample-view-section">
         {/* <div className="buttons-sample-view">
             <RemoveRedEyeOutlinedIcon sx={{ color: "grey" }} /> */}
@@ -43,9 +50,9 @@ export default function Design() {
             name={siteSettings.name}
             description={siteSettings.description}
             descriptionText={siteSettings.descriptionText}
-            subscriberForm={siteSettings.subscriberForm}
+            subscribe={siteSettings.subscribe}
             thumbnailSize={siteSettings.thumbnailSize}
-            showProductDetails={siteSettings.showProductDetails}
+            details={siteSettings.details}
           />
         </div>
       </div>

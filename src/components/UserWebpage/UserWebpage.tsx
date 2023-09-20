@@ -7,9 +7,9 @@ type StoreSettings = {
   name: boolean;
   description: boolean;
   descriptionText: string;
-  subscriberForm: boolean;
+  subscribe: boolean;
   thumbnailSize: string;
-  showProductDetails: boolean;
+  details: boolean;
 };
 
 export default function UserWebpage(settings: StoreSettings) {
@@ -31,7 +31,7 @@ export default function UserWebpage(settings: StoreSettings) {
         </p>
       )}
 
-      {settings.subscriberForm && (
+      {settings.subscribe && (
         <div className="subscribe-form">
           <form action="">
             <input

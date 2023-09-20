@@ -6,22 +6,23 @@ import "./DesignSideBar.css";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 interface DesignSideBarProps {
-  setNewSiteSettings: (key: string, value: any) => void;
+  setNewSiteSettings: (key: string) => void;
+  siteSettings: {
+    header: boolean;
+    logo: boolean;
+    name: boolean;
+    description: boolean;
+    descriptionText: string;
+    subscriberForm: boolean;
+    thumbnailSize: string;
+    showProductDetails: boolean;
+  };
 }
 
-export default function DesignSideBarReact({ setNewSiteSettings }) {
-  const [switchStatus, setSwitchStatus] = React.useState({
-    header: true,
-    logo: true,
-    name: true,
-    description: true,
-    subscribe: true,
-  });
-
-  const handleChange = (value: String): void => {
-    console.log(value);
-  };
-
+export default function DesignSideBarReact({
+  setNewSiteSettings,
+  siteSettings,
+}) {
   return (
     <>
       <div className="design-sidebar">
@@ -37,9 +38,9 @@ export default function DesignSideBarReact({ setNewSiteSettings }) {
             size="small"
             onChange={() => {
               // setSwitchStatus(...switchStatus, [switchStatus.header]: !switchStatus.header.value )
-              setNewSiteSettings("header", switchStatus.header);
+              setNewSiteSettings("header");
             }}
-            checked={switchStatus.header}
+            checked={siteSettings.header}
           />
         </div>
         <div className="switch-group">
@@ -48,8 +49,8 @@ export default function DesignSideBarReact({ setNewSiteSettings }) {
             color="secondary"
             size="small"
             defaultChecked
-            onChange={() => setNewSiteSettings("logo", switchStatus.logo)}
-            checked={switchStatus.logo}
+            onChange={() => setNewSiteSettings("logo")}
+            checked={siteSettings.logo}
           />
         </div>
         <div className="switch-group">
@@ -58,8 +59,8 @@ export default function DesignSideBarReact({ setNewSiteSettings }) {
             color="secondary"
             size="small"
             defaultChecked
-            onChange={() => setNewSiteSettings("logo", switchStatus.name)}
-            checked={switchStatus.name}
+            onChange={() => setNewSiteSettings("name")}
+            checked={siteSettings.name}
           />
         </div>
         <div className="switch-group secondary">
@@ -68,8 +69,8 @@ export default function DesignSideBarReact({ setNewSiteSettings }) {
             <Switch
               color="secondary"
               size="small"
-              defaultChecked
-              onChange={() => handleChange("description")}
+              onChange={() => setNewSiteSettings("description")}
+              checked={siteSettings.description}
             />
           </div>
           <p className="thin-writing">
@@ -83,8 +84,8 @@ export default function DesignSideBarReact({ setNewSiteSettings }) {
           <Switch
             color="secondary"
             size="small"
-            defaultChecked
-            onChange={() => handleChange("subscribe")}
+            onChange={() => setNewSiteSettings("subscribe")}
+            checked={siteSettings.subscribe}
           />
         </div>
 
@@ -103,7 +104,8 @@ export default function DesignSideBarReact({ setNewSiteSettings }) {
           <Switch
             color="secondary"
             size="small"
-            onChange={() => handleChange("details")}
+            onChange={() => setNewSiteSettings("details")}
+            checked={siteSettings.details}
           />
         </div>
       </div>
