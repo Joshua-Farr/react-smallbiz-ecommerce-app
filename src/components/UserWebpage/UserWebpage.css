@@ -20,6 +20,11 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 2em;
+  margin-top: 1em;
+}
+
+.store-name {
+  margin-top: 0.75em;
 }
 
 .subscribe-form input {
@@ -61,7 +66,6 @@
   text-align: center;
   font-weight: 500;
   margin-top: -40px;
-  margin-bottom: 0.75em;
 }
 
 .store-logo:hover,
@@ -72,7 +76,7 @@
 .store-description {
   max-width: 60ch;
   text-align: center;
-  margin-top: 1.5em;
+  margin-top: 1.25em;
   margin-bottom: 1.5em;
   font-size: 0.875rem;
 }
