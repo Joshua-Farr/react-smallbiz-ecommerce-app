@@ -4,12 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-direction: column;
-}
-
-.data-card small {
-  background-color: blue;
+  margin-top: 1.125em;
 }
 
 .data-card:first-child {
@@ -23,23 +19,14 @@
   font-weight: 500;
 }
 
-.data-card :not(:first-child) {
-  margin: auto;
-}
-
 .card-grid {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 25px;
+  justify-content: space-around;
+  gap: 20px;
   margin-top: 1.5em;
   padding: 1em;
-  height: 100vh;
-}
-
-.responsive-container {
-  /* border: 2px solid green; */
 }
 
 .card-title {

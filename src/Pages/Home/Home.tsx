@@ -5,20 +5,15 @@ import {
   Line,
   CartesianGrid,
   XAxis,
-  YAxis,
   Tooltip,
   ResponsiveContainer,
   BarChart,
   Bar,
-  Pie,
-  PieChart,
 } from "recharts";
 
 import "./Home.css";
 
 export default function Home() {
-  //   const [hasProduct, setHasProduct] = React.useState(false);
-
   const data = [
     { name: "Jan.", Revenue: 350, amt: 400 },
     { name: "Feb.", Revenue: 200, amt: 200 },
@@ -85,7 +80,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="store-section-wrapper">
+    <div className="store-section-wrapper home">
       <Header />
       <div className="card-grid total-revenue-card">
         <Card className="data-card">
@@ -115,6 +110,7 @@ export default function Home() {
             </LineChart>
           </ResponsiveContainer>
         </Card>
+
         <Card className="data-card small">
           <p className="small-card-title">New Orders</p>
           <ResponsiveContainer

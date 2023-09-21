@@ -1,0 +1,63 @@
+[
+  {
+    "revenueData": [
+      { "name": "Jan.", "Revenue": 350, "amt": 400 },
+      { "name": "Feb.", "Revenue": 200, "amt": 200 },
+      { "name": "Mar.", "Revenue": 260, "amt": 100 },
+      { "name": "Apr.", "Revenue": 200, "amt": 100 },
+      { "name": "May", "Revenue": 35, "amt": 100 },
+      { "name": "Jun.", "Revenue": 200, "amt": 100 },
+      { "name": "Jul.", "Revenue": 300, "amt": 100 },
+      { "name": "Aug.", "Revenue": 200, "amt": 100 },
+      { "name": "Sept", "Revenue": 350, "amt": 100 },
+      { "name": "Oct.", "Revenue": 200, "amt": 100 },
+      { "name": "Nov.", "Revenue": 200, "amt": 100 },
+      { "name": "Dec.", "Revenue": 14, "amt": 100 }
+    ],
+    "orderData": [
+      { "name": "Mon.", "Orders": 350, "amt": 400 },
+      { "name": "Tue.", "Orders": 200, "amt": 200 },
+      { "name": "Wed.", "Orders": 260, "amt": 100 },
+      { "name": "Thr.", "Orders": 200, "amt": 100 },
+      { "name": "Fri", "Orders": 35, "amt": 100 },
+      { "name": "Sat.", "Orders": 200, "amt": 100 },
+      { "name": "Sun.", "Orders": 300, "amt": 100 }
+    ],
+    "avgRevenue": [
+      { "name": "Mon.", "Revenue": 12, "amt": 400 },
+      { "name": "Tue.", "Revenue": 43, "amt": 200 },
+      { "name": "Wed.", "Revenue": 32, "amt": 100 },
+      { "name": "Thr.", "Revenue": 21, "amt": 100 },
+      { "name": "Fri", "Revenue": 34, "amt": 100 },
+      { "name": "Sat.", "Revenue": 43, "amt": 100 },
+      { "name": "Sun.", "Revenue": 21, "amt": 100 }
+    ],
+    "refundData": [
+      { "name": "Mon.", "Refunds": 0, "amt": 400 },
+      { "name": "Tue.", "Refunds": 3, "amt": 200 },
+      { "name": "Wed.", "Refunds": 5, "amt": 100 },
+      { "name": "Thr.", "Refunds": 1, "amt": 100 },
+      { "name": "Fri", "Refunds": 8, "amt": 100 },
+      { "name": "Sat.", "Refunds": 10, "amt": 100 },
+      { "name": "Sun.", "Refunds": 1, "amt": 100 }
+    ],
+    "siteVisitsData": [
+      { "name": "Mon.", "Visits": 3, "amt": 400 },
+      { "name": "Tue.", "Visits": 6, "amt": 200 },
+      { "name": "Wed.", "Visits": 8, "amt": 100 },
+      { "name": "Thr.", "Visits": 5, "amt": 100 },
+      { "name": "Fri", "Visits": 12, "amt": 100 },
+      { "name": "Sat.", "Visits": 9, "amt": 100 },
+      { "name": "Sun.", "Visits": 6, "amt": 100 }
+    ],
+    "npsData": [
+      { "name": "Mon.", "NPS": 4.5, "amt": 400 },
+      { "name": "Tue.", "NPS": 4.9, "amt": 200 },
+      { "name": "Wed.", "NPS": 4.8, "amt": 100 },
+      { "name": "Thr.", "NPS": 5, "amt": 100 },
+      { "name": "Fri", "NPS": 3.9, "amt": 100 },
+      { "name": "Sat.", "NPS": 4.3, "amt": 100 },
+      { "name": "Sun.", "NPS": 4.65, "amt": 100 }
+    ]
+  }
+]
