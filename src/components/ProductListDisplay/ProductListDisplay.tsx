@@ -4,28 +4,53 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { Products } from "../../Types";
+
+import { useContext } from "react";
 
 import "./ProductListDisplay.css";
 
-function createData(
-  name: string,
-  price: string,
-  status: string,
-  sales: number,
-  revenue: string
-) {
-  return { name, price, status, sales, revenue };
-}
-
-const rows = [
-  createData("The Ultimate Digital Arsenal", "$159", "Published", 24, "$3,816"),
-  createData("Profit Powerhouse Playbook", "$237", "Published", 37, "$8,769"),
-  createData("CodeMaverick Mastery", "$262", "Draft", 24, "$6,288"),
-  createData("WebWizard's Workshop", "$305", "Draft", 67, "$20,435"),
-  createData("DesignMaven Masterclass", "$35", "Published", 49, "$1,715"),
-];
-
 export default function ProductListDisplay() {
+  function createData(
+    name: string,
+    price: string,
+    status: string,
+    sales: number,
+    revenue: string
+  ) {
+    return { name, price, status, sales, revenue };
+  }
+
+  const userProducts: Products[] = [
+    {
+      name: "Dog Bone",
+      description: "A dog bone",
+      price: 233,
+      taxCategory: "exempt",
+      productImages: [""],
+      status: "Active",
+      files: ["hello"],
+      sales: 12,
+      revenue: 23,
+    },
+  ];
+
+  let productRows: {
+    name: string;
+    price: string;
+    status: string;
+    sales: number;
+    revenue: string;
+  }[] = [];
+
+  userProducts.forEach((product) => {
+    const price = "$" + product.price.toString();
+    const revenue = "$" + product.revenue.toString();
+    productRows.push(
+      createData(product.name, price, product.status, product.sales, revenue)
+    );
+  });
+
   return (
     <>
       <input
@@ -46,7 +71,7 @@ export default function ProductListDisplay() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+            {productRows.map((row) => (
               <TableRow key={row.name}>
                 <TableCell component="th" scope="row">
                   {row.name}
