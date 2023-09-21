@@ -4,10 +4,10 @@ import { useState } from "react";
 import "./Store.css";
 import AddProductPopout from "./Add ProductPopout/AddProductPopout";
 import ProductListDisplay from "../../components/ProductListDisplay/ProductListDisplay";
+import CreateAProductCard from "../../components/CreateAProduct/CreateAProductCard";
 
 export default function Store() {
-  // const [hasProduct, setHasProduct] = useState(false);
-
+  const [hasProduct, setHasProduct] = useState(true);
   const [showAddProduct, setShowAddProduct] = useState(false);
 
   function toggleProductAdd() {
@@ -16,14 +16,16 @@ export default function Store() {
 
   return (
     <div className="store-section-wrapper">
-      <Header toggleProductAdd={toggleProductAdd} />
+      <Header toggleProductAdd={toggleProductAdd} title={"Products"} />
       {showAddProduct && (
         <AddProductPopout toggleProductAdd={toggleProductAdd} />
       )}
-      {/* <div className="create-a-product-card">
-        {!hasProduct && <CreateAProductCard />}
-      </div> */}
-      <ProductListDisplay />
+      {!hasProduct && (
+        <div className="create-a-product-card">
+          <CreateAProductCard />
+        </div>
+      )}
+      {hasProduct && <ProductListDisplay />}
     </div>
   );
 }

@@ -81,7 +81,7 @@ export default function Home() {
 
   return (
     <div className="store-section-wrapper home">
-      <Header />
+      <Header title={"Home"} />
       <div className="card-grid total-revenue-card">
         <Card className="data-card">
           <p className="card-title">Total Revenue</p>

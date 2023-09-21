@@ -38,11 +38,6 @@ export default function AddProductPopout(closebtn: PopoutProps) {
     <div className="full-screen">
       <div className="dark-side-of-screen"></div>
       <div className="add-product-popup-wrapper">
-        <div className="publish-section">
-          <button type="submit" form="new-product-form">
-            Publish product
-          </button>
-        </div>
         <span
           className="close-add-product-popup"
           onClick={() => closebtn.toggleProductAdd()}
@@ -206,6 +201,11 @@ export default function AddProductPopout(closebtn: PopoutProps) {
             </div>
           </div>
         </form>
+        <div className="publish-section">
+          <button type="submit" form="new-product-form">
+            Publish product
+          </button>
+        </div>
       </div>
     </div>
   );

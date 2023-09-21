@@ -6,12 +6,13 @@ import "./Header.css";
 
 type HeaderProps = {
   toggleProductAdd: () => void;
+  title: string;
 };
 
 export default function Header(clickMe: HeaderProps) {
   return (
     <div className="header-wrapper">
-      <h2 className="page-title">Products</h2>
+      <h2 className="page-title">{clickMe.title}</h2>
       <div className="header-icons">
         <SearchRoundedIcon className="mui-icon" />
         <NotificationsNoneRoundedIcon className="mui-icon" />
