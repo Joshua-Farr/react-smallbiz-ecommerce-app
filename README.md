@@ -9,3 +9,4 @@
 5. Fix add product button on the home page
 6. Add save state functionailty to design page
 7. Search field for product table
+8. Add design preview page
