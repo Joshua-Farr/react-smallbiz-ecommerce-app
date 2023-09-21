@@ -30,16 +30,34 @@ type StoreSettings = {
   showProductDetails: boolean;
 };
 
-export const UserContext = React.createContext();
+// What kind of context to keep here?
+// Site Settings
+// All Products
+
+export const UserContext = React.createContext<Array<Products>>([]);
 
 export default function App() {
+  const [storeSettings, setStoreSettings] = React.useState<
+    Array<StoreSettings>
+  >({
+    header: true,
+    logo: true,
+    name: true,
+    description: true,
+    descriptionText: "THIS IS THE DESCRIPTION",
+    subscriberForm: true,
+    thumbnailSize: "small",
+    showProductDetails: true,
+  });
   // return <Login />;
   const [productList, setProductList] = React.useState<Array<Products>>([]);
-  // const [storeSettings, setStoreSettings] = React.useState<
-  //   <StoreSettings>();
+
+  function addNewProduct(item: Products) {
+    setProductList((initial) => [...initial, item]);
+  }
 
   return (
-    <UserContext.Provider value={{ productList }}>
+    <UserContext.Provider value={{ addNewProduct }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
