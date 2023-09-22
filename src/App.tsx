@@ -20,9 +20,17 @@ export default function App() {
     setProductList((initial: Products[]) => [...initial, item]);
   }
 
-  const [storeSettings, setStoreSettings] = React.useState<
-    StoreSettings | undefined
-  >(undefined);
+  const [siteSettings, setSiteSettings] = React.useState({
+    header: true,
+    logo: true,
+    name: true,
+    description: true,
+    descriptionText:
+      "Discover a world of digital treasures at our E-commerce store. Instantly download top-quality digital products for all your needs. Shop now!",
+    subscribe: true,
+    thumbnailSize: "string",
+    details: true,
+  });
 
   const [productList, setProductList] = React.useState<Array<Products>>([
     {
@@ -39,7 +47,9 @@ export default function App() {
   ]);
 
   return (
-    <UserContext.Provider value={{ storeSettings, productList, addNewProduct }}>
+    <UserContext.Provider
+      value={{ siteSettings, setSiteSettings, productList, addNewProduct }}
+    >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

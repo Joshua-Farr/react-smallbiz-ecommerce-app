@@ -1,5 +1,4 @@
 import Switch from "@mui/material/Switch";
-import React from "react";
 import { NavLink } from "react-router-dom";
 
 import "./DesignSideBar.css";

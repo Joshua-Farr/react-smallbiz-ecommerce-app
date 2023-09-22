@@ -1,23 +1,11 @@
 import DesignSideBar from "../../components/DesignSideBar/DesignSideBar";
-import React, { useEffect } from "react";
-import Header from "../../components/Header/Header";
+import React from "react";
 import UserWebpage from "../../components/UserWebpage/UserWebpage";
-import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+import { UserContext } from "../../App";
 import "./Design.css";
-import { NavLink } from "react-router-dom";
 
 export default function Design() {
-  const [siteSettings, setSiteSettings] = React.useState({
-    header: true,
-    logo: true,
-    name: true,
-    description: true,
-    descriptionText:
-      "Discover a world of digital treasures at our E-commerce store. Instantly download top-quality digital products for all your needs. Shop now!",
-    subscribe: true,
-    thumbnailSize: "string",
-    details: true,
-  });
+  const { siteSettings, setSiteSettings } = React.useContext(UserContext);
 
   const setNewSiteSettings = (key: string, value: any) => {
     console.log(key);
@@ -29,44 +17,35 @@ export default function Design() {
     }
   };
 
-  React.useEffect(() => {
-    console.log(siteSettings);
-  }, [siteSettings]);
-
   return (
-    // <div className="store-section-wrapper">
     <div className="design-section-wrapper">
       <DesignSideBar
         setNewSiteSettings={setNewSiteSettings}
         siteSettings={siteSettings}
       />
       <div className="sample-view-section">
-        {/* <div className="buttons-sample-view">
-            <RemoveRedEyeOutlinedIcon sx={{ color: "grey" }} /> */}
-        {/*  */}
-        <button className="publish-webpage-btn">See Preview</button>
-        {/* </NavLink> */}
-        {/* </div> */}
-        <div className="design-preview">
-          <div className="fake-browser">
-            <div className="circle open-circle"></div>
-            <div className="circle minimize-circle"></div>
-            <div className="circle close-circle"></div>
+        <div className="buttons-sample-view">
+          {/* <button className="publish-webpage-btn">See Preview</button> */}
+
+          <div className="design-preview">
+            <div className="fake-browser">
+              <div className="circle open-circle"></div>
+              <div className="circle minimize-circle"></div>
+              <div className="circle close-circle"></div>
+            </div>
+            <UserWebpage
+              header={siteSettings.header}
+              logo={siteSettings.logo}
+              name={siteSettings.name}
+              description={siteSettings.description}
+              descriptionText={siteSettings.descriptionText}
+              subscribe={siteSettings.subscribe}
+              thumbnailSize={siteSettings.thumbnailSize}
+              details={siteSettings.details}
+            />
           </div>
-          <UserWebpage
-            header={siteSettings.header}
-            logo={siteSettings.logo}
-            name={siteSettings.name}
-            description={siteSettings.description}
-            descriptionText={siteSettings.descriptionText}
-            subscribe={siteSettings.subscribe}
-            thumbnailSize={siteSettings.thumbnailSize}
-            details={siteSettings.details}
-          />
         </div>
       </div>
     </div>
-
-    // </div>
   );
 }

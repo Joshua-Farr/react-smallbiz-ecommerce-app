@@ -16,6 +16,7 @@ export interface StoreSettings {
   name: boolean;
   description: boolean;
   descriptionText: string;
+  subscribe: boolean;
   subscriberForm: boolean;
   thumbnailSize: string;
   showProductDetails: boolean;

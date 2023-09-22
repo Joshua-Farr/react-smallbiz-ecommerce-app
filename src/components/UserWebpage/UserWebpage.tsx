@@ -1,18 +1,24 @@
 import ProductCard from "../ProductCard/ProductCard";
 import "./UserWebpage.css";
+import { StoreSettings } from "../../Types";
+import { useContext } from "react";
 
-type StoreSettings = {
-  header: boolean;
-  logo: boolean;
-  name: boolean;
-  description: boolean;
-  descriptionText: string;
-  subscribe: boolean;
-  thumbnailSize: string;
-  details: boolean;
-};
+import { UserContext } from "../../App.tsx";
+import { Products } from "../../Types.tsx";
 
 export default function UserWebpage(settings: StoreSettings) {
+  const { productList } = useContext(UserContext);
+
+  const theProducts = productList.map((product: Products) => {
+    return (
+      <ProductCard
+        price={product.price}
+        name={product.name}
+        description={product.description}
+      />
+    );
+  });
+
   return (
     <div className="webpage-wrapper">
       {settings.header && (
@@ -41,12 +47,7 @@ export default function UserWebpage(settings: StoreSettings) {
           </form>
         </div>
       )}
-      <div className="product-gallery">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-      </div>
+      <div className="product-gallery">{theProducts}</div>
       <h5 className="powered-by">Powered by MintRoad</h5>
     </div>
   );
