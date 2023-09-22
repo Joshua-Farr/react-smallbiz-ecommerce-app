@@ -12,8 +12,8 @@ import { Products, StoreSettings } from "./Types.tsx";
 // import ProductCard from "./components/ProductCard/ProductCard.tsx";
 
 export const UserContext = React.createContext<
-  Array<Products[] | StoreSettings | undefined>
->([]);
+  Products[] | StoreSettings | undefined | any
+>(undefined);
 
 export default function App() {
   function addNewProduct(item: Products) {
@@ -24,10 +24,22 @@ export default function App() {
     StoreSettings | undefined
   >(undefined);
 
-  const [productList, setProductList] = React.useState<Array<Products>>([]);
+  const [productList, setProductList] = React.useState<Array<Products>>([
+    {
+      name: "Dog Bone",
+      description: "A dog bone",
+      price: 233,
+      taxCategory: "exempt",
+      productImages: [""],
+      status: "Active",
+      files: ["hello"],
+      sales: 12,
+      revenue: 23,
+    },
+  ]);
 
   return (
-    <UserContext.Provider value={[storeSettings, productList]}>
+    <UserContext.Provider value={{ storeSettings, productList, addNewProduct }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

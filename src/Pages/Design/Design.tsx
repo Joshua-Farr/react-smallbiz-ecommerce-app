@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import UserWebpage from "../../components/UserWebpage/UserWebpage";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import "./Design.css";
+import { NavLink } from "react-router-dom";
 
 export default function Design() {
   const [siteSettings, setSiteSettings] = React.useState({
@@ -42,7 +43,9 @@ export default function Design() {
       <div className="sample-view-section">
         {/* <div className="buttons-sample-view">
             <RemoveRedEyeOutlinedIcon sx={{ color: "grey" }} /> */}
-        <button className="publish-webpage-btn">Publish Changes</button>
+        {/*  */}
+        <button className="publish-webpage-btn">See Preview</button>
+        {/* </NavLink> */}
         {/* </div> */}
         <div className="design-preview">
           <div className="fake-browser">

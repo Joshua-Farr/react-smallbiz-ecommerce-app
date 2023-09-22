@@ -5,35 +5,22 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { Products } from "../../Types";
-
 import { useContext } from "react";
-
+import { UserContext } from "../../App";
 import "./ProductListDisplay.css";
 
 export default function ProductListDisplay() {
-  function createData(
+  const { productList, addNewProduct } = useContext(UserContext);
+
+  const createData = (
     name: string,
     price: string,
     status: string,
     sales: number,
     revenue: string
-  ) {
+  ) => {
     return { name, price, status, sales, revenue };
-  }
-
-  const userProducts: Products[] = [
-    {
-      name: "Dog Bone",
-      description: "A dog bone",
-      price: 233,
-      taxCategory: "exempt",
-      productImages: [""],
-      status: "Active",
-      files: ["hello"],
-      sales: 12,
-      revenue: 23,
-    },
-  ];
+  };
 
   let productRows: {
     name: string;
@@ -43,7 +30,7 @@ export default function ProductListDisplay() {
     revenue: string;
   }[] = [];
 
-  userProducts.forEach((product) => {
+  productList.forEach((product: Products) => {
     const price = "$" + product.price.toString();
     const revenue = "$" + product.revenue.toString();
     productRows.push(

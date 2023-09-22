@@ -1,4 +1,4 @@
-export type Products = {
+export interface Products {
   name: string;
   description: string;
   price: number;
@@ -8,9 +8,9 @@ export type Products = {
   files: string[];
   sales: number;
   revenue: number;
-};
+}
 
-export type StoreSettings = {
+export interface StoreSettings {
   header: boolean;
   logo: boolean;
   name: boolean;
@@ -19,4 +19,4 @@ export type StoreSettings = {
   subscriberForm: boolean;
   thumbnailSize: string;
   showProductDetails: boolean;
-};
+}
