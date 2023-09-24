@@ -28,7 +28,16 @@ export default function UserWebpage(settings: StoreSettings) {
         </div>
       )}
 
-      {settings.logo && <div className="store-logo">MR</div>}
+      {settings.logo && (
+        <div
+          className="store-logo"
+          style={{
+            marginTop: settings.header ? "-40px" : "2em",
+          }}
+        >
+          MR
+        </div>
+      )}
       {settings.name && <h1 className="store-name">Store Name Here</h1>}
       {settings.description && (
         <p className="store-description">{settings.descriptionText}</p>
