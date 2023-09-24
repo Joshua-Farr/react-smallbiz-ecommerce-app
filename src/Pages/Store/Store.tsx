@@ -16,7 +16,11 @@ export default function Store() {
 
   return (
     <div className="store-section-wrapper">
-      <Header toggleProductAdd={toggleProductAdd} title={"Products"} />
+      <Header
+        toggleProductAdd={toggleProductAdd}
+        title={"Products"}
+        buttons={true}
+      />
       {showAddProduct && (
         <AddProductPopout toggleProductAdd={toggleProductAdd} />
       )}

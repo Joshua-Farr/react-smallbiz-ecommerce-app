@@ -15,6 +15,7 @@ export default function UserWebpage(settings: StoreSettings) {
         price={product.price}
         name={product.name}
         description={product.description}
+        image={product.productImages}
       />
     );
   });

@@ -1,5 +1,6 @@
 import Switch from "@mui/material/Switch";
 import { NavLink } from "react-router-dom";
+import { StoreSettings } from "../../Types";
 
 import "./DesignSideBar.css";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
@@ -104,15 +105,6 @@ export default function DesignSideBarReact({
               <option value="large">Large</option>
             </select>
           </div>
-        </div>
-        <div className="switch-group">
-          <span>Show product details</span>
-          <Switch
-            color="secondary"
-            size="small"
-            onChange={() => setNewSiteSettings("details")}
-            checked={siteSettings.details}
-          />
         </div>
       </div>
     </>

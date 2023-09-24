@@ -1,7 +1,8 @@
 import "./AddProductPopout.css";
 // import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import React from "react";
-import { useContext } from "react";
+import { UserContext } from "../../../App";
+import { Products } from "../../../Types";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import DragDropFile from "../../../components/DragDropFile/DragDropFile";
 
@@ -19,19 +20,24 @@ type PopoutProps = {
 };
 
 export default function AddProductPopout(closebtn: PopoutProps) {
-  const [productDetails, setProductDetails] = React.useState<ProductFormState>({
+  const { addNewProduct } = React.useContext(UserContext);
+  const [productDetails, setProductDetails] = React.useState<Products>({
     name: "",
     description: "",
     price: 0,
     taxCategory: "",
     productImages: [""],
+    status: "Active",
     files: [""],
+    sales: 0,
+    revenue: 0,
   });
 
   function handleFormSubmit(event: React.FormEvent) {
     event.preventDefault();
-    console.log("Submitted!", productDetails);
+    addNewProduct(productDetails);
     closebtn.toggleProductAdd();
+    console.log("Submitted!", productDetails);
   }
 
   return (
@@ -65,9 +71,8 @@ export default function AddProductPopout(closebtn: PopoutProps) {
                 className="questions-input"
                 type="text"
                 placeholder=""
-                // required
+                required
                 onChange={(e) => {
-                  // console.log(e.target.value);
                   setProductDetails({
                     ...productDetails,
                     name: e.target.value,
@@ -83,11 +88,11 @@ export default function AddProductPopout(closebtn: PopoutProps) {
               </label>
               <input
                 id="description"
+                required
                 className="questions-input"
                 type="text"
                 placeholder=""
                 onChange={(e) => {
-                  // console.log(e.target.value);
                   setProductDetails({
                     ...productDetails,
                     description: e.target.value,
@@ -114,6 +119,7 @@ export default function AddProductPopout(closebtn: PopoutProps) {
               </label>
               <input
                 id="price"
+                required
                 className="questions-input"
                 type="number"
                 placeholder=""
@@ -132,6 +138,7 @@ export default function AddProductPopout(closebtn: PopoutProps) {
                 className="questions-input"
                 name="tax-category"
                 id="tax-category"
+                required
                 onChange={(e) => {
                   console.log(e.target.value);
                   setProductDetails({
