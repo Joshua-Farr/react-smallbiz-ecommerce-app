@@ -9,7 +9,7 @@ export default function CheckoutSummary() {
         <h2 className="total-amt-dollars">$120.00</h2>
         <div className="secure-payment">
           <LockIcon className="lock-icon" />
-          <span>Secure Payment</span>
+          <span>Payments are secure and encrypted</span>
         </div>
       </div>
       <div className="order-details">
