@@ -6,14 +6,14 @@ import { Products } from "../../../Types";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import DragDropFile from "../../../components/DragDropFile/DragDropFile";
 
-type ProductFormState = {
-  name: string;
-  description: string;
-  price: number;
-  taxCategory: string;
-  productImages: string[];
-  files: string[];
-};
+// type ProductFormState = {
+//   name: string;
+//   description: string;
+//   price: number;
+//   taxCategory: string;
+//   productImages: string[];
+//   files: string[];
+// };
 
 type PopoutProps = {
   toggleProductAdd: () => void;
