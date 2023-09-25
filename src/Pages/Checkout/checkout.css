@@ -9,4 +9,77 @@
 .checkout-left-side {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 2em;
+  position: relative;
+}
+
+.questions-input {
+  margin-top: 0.5em;
+  width: 100%;
+  border-radius: 8px;
+  height: 38px;
+  border: 1px solid #bdbbbb;
+  padding-left: 10px;
+  margin-bottom: 1.75em;
+}
+
+.checkout-form {
+}
+
+.checkout-form > label {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.complete-payment-btn {
+  color: white;
+  background-color: #7e59ed;
+  width: 100%;
+  padding: 0.5em 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.complete-payment-btn:hover,
+.complete-payment-btn:focus {
+  cursor: pointer;
+}
+
+.card-details {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+}
+
+#card-exp {
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  text-align: center;
+}
+
+#card-cvc {
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  text-align: center;
+}
+
+#card-number {
+  border-radius: 8px 0px 0px 8px;
+  border-right: none;
+}
+
+.sidebar-logo {
+  font-size: 1.75rem;
+  position: absolute;
+  top: 0;
+  letter-spacing: 4px;
+}
+
+.payment-detail-wrapper {
+  margin-bottom: 2em;
 }
