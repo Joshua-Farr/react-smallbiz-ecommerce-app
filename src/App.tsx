@@ -8,6 +8,7 @@ import Store from "./Pages/Store/Store.tsx";
 import Design from "./Pages/Design/Design.tsx";
 import { Products, StoreSettings } from "./Types.tsx";
 import Checkout from "./Pages/Checkout/Checkout.tsx";
+import SingleProductPage from "./components/SingleProductPage/SingleProductPage.tsx";
 // import DesignSideBar from "./components/DesignSideBar/DesignSideBar.tsx";
 // import UserWebpage from "./components/UserWebpage/UserWebpage.tsx";
 // import ProductCard from "./components/ProductCard/ProductCard.tsx";
@@ -97,6 +98,8 @@ export default function App() {
     //   </BrowserRouter>
     // </UserContext.Provider>
 
-    <Checkout />
+    // <Checkout />
+
+    <SingleProductPage />
   );
 }

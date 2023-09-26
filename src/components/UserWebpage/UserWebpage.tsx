@@ -16,6 +16,7 @@ export default function UserWebpage(settings: StoreSettings) {
         name={product.name}
         description={product.description}
         image={product.productImages}
+        className="product-card"
       />
     );
   });
