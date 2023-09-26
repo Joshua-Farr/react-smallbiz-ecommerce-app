@@ -67,8 +67,28 @@
   font-weight: 700;
 }
 
-.quantity-product-page > input {
+.quantity-product-page-value {
   width: 3em;
   border: none;
   text-align: center;
+}
+
+.increment-decrement-section {
+  display: flex;
+  align-items: center;
+}
+
+.increment-decrement-section > span {
+  font-size: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  user-select: none;
+}
+
+.increment-decrement-section > span:hover,
+.increment-decrement-section > span:focus {
+  cursor: pointer;
 }

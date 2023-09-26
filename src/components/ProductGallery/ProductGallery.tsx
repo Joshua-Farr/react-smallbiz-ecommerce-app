@@ -8,8 +8,19 @@ interface ProductGalleryProps {
   images: string[];
 }
 
-export default function ProductGallery(imageArray: ProductGalleryProps) {
+export default function ProductGallery(props: ProductGalleryProps) {
   const [imageIndex, setImageIndex] = useState(0);
+
+  const miniImages: string[] = [];
+
+  //Rendering the mini product images under the hero image
+  for (let i = 1; i < props.images.length; i++) {
+    miniImages.push(props.images[i]);
+  }
+
+  let miniElements = miniImages.map((img) => {
+    return <img src={`${img}`} alt="" className="mini-product-img" />;
+  });
 
   return (
     <div className="gallery-wrapper">
@@ -17,17 +28,12 @@ export default function ProductGallery(imageArray: ProductGalleryProps) {
         <ArrowBackIosIcon className="back-arrow" />
         <ArrowForwardIosIcon className="forward-arrow" />
         <img
-          src={imageArray[imageIndex]}
+          src={props.images[imageIndex]}
           alt=""
           className="main-product-image"
         />
       </div>
-      <div className="mini-image-gallery">
-        <img src="" alt="" className="mini-product-img" />
-        <img src="" alt="" className="mini-product-img" />
-        <img src="" alt="" className="mini-product-img" />
-        <img src="" alt="" className="mini-product-img" />
-      </div>
+      <div className="mini-image-gallery">{miniElements}</div>
     </div>
   );
 }
