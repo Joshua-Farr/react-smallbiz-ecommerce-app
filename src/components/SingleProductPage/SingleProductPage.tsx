@@ -7,15 +7,16 @@ import { Products } from "../../Types";
 import { productTestData } from "../../ProductTestData";
 
 export default function SingleProductPage(product: Products) {
+  const [quantityWanted, setQuanityWanted] = useState(0);
+
   function handleAddToCart(): void {
     console.log("Added to the cart!");
   }
 
   function addToCart(amount: number, product: Products) {
     console.log(`${amount} of ${product} added to the cart!`);
+    setQuanityWanted(0);
   }
-
-  const [quantityWanted, setQuanityWanted] = useState(0);
 
   function updateQuantityWanted(amount: number) {
     if (quantityWanted === 0 && amount === -1) {

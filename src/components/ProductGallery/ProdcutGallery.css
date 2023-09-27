@@ -49,6 +49,9 @@
 .forward-arrow {
   top: 50%;
   bottom: 50%;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
 }
 
 .forward-arrow {
