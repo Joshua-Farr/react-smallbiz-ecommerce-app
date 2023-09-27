@@ -14,7 +14,7 @@ export default function ProductGallery(props: ProductGalleryProps) {
   const miniImages: string[] = [];
 
   //Rendering the mini product images under the hero image
-  for (let i = 1; i < props.images.length; i++) {
+  for (let i = 0; i < props.images.length; i++) {
     miniImages.push(props.images[i]);
   }
 
@@ -22,11 +22,32 @@ export default function ProductGallery(props: ProductGalleryProps) {
     return <img src={`${img}`} alt="" className="mini-product-img" />;
   });
 
+  //Toggling through all the images
+  function handleImageChange(direction: number) {
+    if (imageIndex === 0 && direction === -1) {
+      setImageIndex(props.images.length - 1);
+    } else if (imageIndex === props.images.length - 1 && direction === 1) {
+      setImageIndex(0);
+    } else {
+      setImageIndex((index) => index + direction);
+    }
+  }
+
   return (
     <div className="gallery-wrapper">
       <div className="main-image-wrapper">
-        <ArrowBackIosIcon className="back-arrow" />
-        <ArrowForwardIosIcon className="forward-arrow" />
+        <ArrowBackIosIcon
+          className="back-arrow"
+          onClick={() => {
+            handleImageChange(-1);
+          }}
+        />
+        <ArrowForwardIosIcon
+          className="forward-arrow"
+          onClick={() => {
+            handleImageChange(1);
+          }}
+        />
         <img
           src={props.images[imageIndex]}
           alt=""
