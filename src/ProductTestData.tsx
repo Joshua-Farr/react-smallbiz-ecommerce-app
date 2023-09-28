@@ -12,6 +12,7 @@ export const productTestData: Products[] = [
     files: ["hello"],
     sales: 24,
     revenue: 3816,
+    id: 1,
   },
   {
     name: "Profit Powerhouse Playbook",
@@ -24,6 +25,7 @@ export const productTestData: Products[] = [
     files: ["hello"],
     sales: 37,
     revenue: 8769,
+    id: 2,
   },
   {
     name: "DesignMaven Masterclass",
@@ -36,5 +38,6 @@ export const productTestData: Products[] = [
     files: ["hello"],
     sales: 49,
     revenue: 1715,
+    id: 3,
   },
 ];

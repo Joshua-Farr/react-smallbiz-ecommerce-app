@@ -8,6 +8,7 @@ export interface Products {
   files: string[];
   sales: number;
   revenue: number;
+  id: number;
 }
 
 export interface StoreSettings {

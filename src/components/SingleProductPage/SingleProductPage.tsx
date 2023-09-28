@@ -1,20 +1,20 @@
 import ProductGallery from "../ProductGallery/ProductGallery";
 import StarIcon from "@mui/icons-material/Star";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./SingleProductPage.css";
 import { Products } from "../../Types";
+import { useParams } from "react-router-dom";
 
 import { productTestData } from "../../ProductTestData";
 
-export default function SingleProductPage(product: Products) {
+export default function SingleProductPage() {
   const [quantityWanted, setQuanityWanted] = useState(0);
-
-  function handleAddToCart(): void {
-    console.log("Added to the cart!");
-  }
+  const [product, setProduct] = useState<Products | null>(
+    productTestData[useParams().id - 1]
+  );
 
   function addToCart(amount: number, product: Products) {
-    console.log(`${amount} of ${product} added to the cart!`);
+    console.log(`${amount} of ${product.name} added to the cart!`);
     setQuanityWanted(0);
   }
 
@@ -38,9 +38,9 @@ export default function SingleProductPage(product: Products) {
         />
 
         <div className="product-information">
-          <h1>{product.name}Product Name</h1>
+          <h1>{product.name}</h1>
           <div className="divider-line"></div>
-          <h3>$199.00</h3>
+          <h3>${product.price}</h3>
 
           <div className="ratings">
             <>
@@ -53,16 +53,7 @@ export default function SingleProductPage(product: Products) {
             <span>8 Reviews</span>
           </div>
 
-          <p className="product-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-            cumque repellat, reiciendis iusto eaque, vitae mollitia rem,
-            repudiandae incidunt voluptatum ut harum officia dolorum beatae
-            accusamus. Voluptatibus laudantium eligendi odit. <br></br>
-            <br></br>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Quaerat cumque repellat, reiciendis iusto eaque, vitae mollitia rem,
-            repudiandae incidunt voluptatum ut harum officia dolorum beatae
-            accusamus. Voluptatibus laudantium eligendi odit.
-          </p>
+          <p className="product-description">{product.description}</p>
 
           <div className="quantity-product-page">
             <span>Quantity</span>

@@ -2,6 +2,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import "./UserWebpage.css";
 import { StoreSettings } from "../../Types";
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 
 import { UserContext } from "../../App.tsx";
 import { Products } from "../../Types.tsx";
@@ -15,6 +16,7 @@ export default function UserWebpage(settings: StoreSettings) {
         price={product.price}
         name={product.name}
         description={product.description}
+        id={product.id}
         image={product.productImages}
         className="product-card"
       />

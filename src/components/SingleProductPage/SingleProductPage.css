@@ -8,6 +8,10 @@
   justify-items: center;
 }
 
+.product-information {
+  max-width: 475px;
+}
+
 .overall-screen-wrapper {
   display: flex;
   justify-content: center;

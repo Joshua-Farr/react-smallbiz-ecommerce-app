@@ -41,31 +41,32 @@ export default function App() {
     React.useState<Array<Products>>(productTestData);
 
   return (
-    // <UserContext.Provider
-    //   value={{ siteSettings, setSiteSettings, productList, addNewProduct }}
-    // >
-    //   <BrowserRouter>
-    //     <Routes>
-    //       <Route path="/" element={<Layout />}>
-    //         <Route index element={<Home />}></Route>
-    //         <Route path="store" index element={<Store />}></Route>
-    //       </Route>
-    //       <Route
-    //         path="design"
-    //         element={
-    //           <Design
-    //           // setStoreSettings={() =>
-    //           //   setStoreSettings((settings: StoreSettings) => settings)
-    //           // }
-    //           />
-    //         }
-    //       ></Route>
-    //     </Routes>
-    //   </BrowserRouter>
-    // </UserContext.Provider>
+    <UserContext.Provider
+      value={{ siteSettings, setSiteSettings, productList, addNewProduct }}
+    >
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />}></Route>
+            <Route path="store" index element={<Store />}></Route>
+          </Route>
+          <Route
+            path="design"
+            element={
+              <Design
+              // setStoreSettings={() =>
+              //   setStoreSettings((settings: StoreSettings) => settings)
+              // }
+              />
+            }
+          ></Route>
+          <Route path="/product/:id" element={<SingleProductPage />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </UserContext.Provider>
 
     // <Checkout />
 
-    <SingleProductPage product={productTestData[1]} />
+    // <SingleProductPage product={productTestData[1]} />
   );
 }
