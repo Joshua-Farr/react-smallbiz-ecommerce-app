@@ -28,7 +28,7 @@ export default function SingleProductPage() {
   return (
     <>
       <div className="overall-screen-wrapper">
-        <ProductPageHeader />
+        <ProductPageHeader className="gallery-header" />
         <div className="gallery-center">
           <div className="product-gallery-wrapper">
             <ProductGallery
