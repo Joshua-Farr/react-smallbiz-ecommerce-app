@@ -4,7 +4,7 @@ import { UserContext } from "../../../App";
 import { Products } from "../../../Types";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import DragDropFile from "../../../components/DragDropFile/DragDropFile";
-import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
 
 type PopoutProps = {
   toggleProductAdd: () => void;
@@ -22,8 +22,8 @@ export default function AddProductPopout(closebtn: PopoutProps) {
     files: ["joe"],
     sales: 0,
     revenue: 0,
-    id: Math.random(),
-    key: Math.random(),
+    id: Math.floor(Math.random() * 100),
+    key: Math.floor(Math.random() * 100),
   });
 
   function handleFormSubmit(event: React.FormEvent) {
@@ -117,7 +117,6 @@ export default function AddProductPopout(closebtn: PopoutProps) {
                 type="number"
                 placeholder=""
                 onChange={(e) => {
-                  console.log(e.target.value);
                   setProductDetails({
                     ...productDetails,
                     price: e.target.valueAsNumber,

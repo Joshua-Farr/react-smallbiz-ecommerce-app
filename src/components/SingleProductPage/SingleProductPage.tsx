@@ -10,11 +10,23 @@ import { UserContext } from "../../App";
 
 export default function SingleProductPage() {
   const [quantityWanted, setQuanityWanted] = useState(0);
+  const { shoppingCart, setShoppingCart, productList } =
+    useContext(UserContext);
+
+  console.log(useParams.id);
   const [product, setProduct] = useState<Products | null>(
     productTestData[useParams().id - 1]
+
+    // findProduct(useParams().id)
   );
 
-  const { shoppingCart, setShoppingCart } = useContext(UserContext);
+  function findProduct(id: number): Products {
+    productList.forEach((product: Products) => {
+      if (product.id === id) {
+        return product;
+      }
+    });
+  }
 
   function addToCart(amount: number, product: Products) {
     setShoppingCart((cart: Products[]) => {
