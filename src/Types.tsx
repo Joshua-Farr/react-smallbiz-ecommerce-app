@@ -9,6 +9,7 @@ export interface Products {
   sales: number;
   revenue: number;
   id: number;
+  key: number;
 }
 
 export interface StoreSettings {

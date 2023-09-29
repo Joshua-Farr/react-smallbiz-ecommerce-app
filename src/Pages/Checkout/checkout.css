@@ -4,6 +4,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 2em;
+  border: 2px solid blue;
+}
+
+.inner-wrapper {
+  max-width: 1280px;
 }
 
 .checkout-left-side {

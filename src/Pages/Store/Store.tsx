@@ -2,7 +2,7 @@
 import Header from "../../components/Header/Header";
 import { useState } from "react";
 import "./Store.css";
-import AddProductPopout from "./Add ProductPopout/AddProductPopout";
+import AddProductPopout from "./AddProductPopout/AddProductPopout";
 import ProductListDisplay from "../../components/ProductListDisplay/ProductListDisplay";
 import CreateAProductCard from "../../components/CreateAProduct/CreateAProductCard";
 

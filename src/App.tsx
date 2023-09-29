@@ -14,7 +14,6 @@ import SingleProductPage from "./components/SingleProductPage/SingleProductPage.
 // import ProductCard from "./components/ProductCard/ProductCard.tsx";
 
 import { productTestData } from "./ProductTestData.tsx";
-import ProductPageHeader from "./components/SingleProductPage/ProductPageHeader.tsx";
 
 export const UserContext = React.createContext<
   Products[] | StoreSettings | undefined | any
@@ -75,10 +74,5 @@ export default function App() {
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
-
-    // <Checkout />
-
-    // <SingleProductPage product={productTestData[1]} />
-    // <ProductPageHeader />
   );
 }

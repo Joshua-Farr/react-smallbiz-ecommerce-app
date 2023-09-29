@@ -1,19 +1,10 @@
 import "./AddProductPopout.css";
-// import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import React from "react";
 import { UserContext } from "../../../App";
 import { Products } from "../../../Types";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import DragDropFile from "../../../components/DragDropFile/DragDropFile";
-
-// type ProductFormState = {
-//   name: string;
-//   description: string;
-//   price: number;
-//   taxCategory: string;
-//   productImages: string[];
-//   files: string[];
-// };
+import { v4 as uuidv4 } from "uuid";
 
 type PopoutProps = {
   toggleProductAdd: () => void;
@@ -28,9 +19,11 @@ export default function AddProductPopout(closebtn: PopoutProps) {
     taxCategory: "",
     productImages: [""],
     status: "Active",
-    files: [""],
+    files: ["joe"],
     sales: 0,
     revenue: 0,
+    id: Math.random(),
+    key: Math.random(),
   });
 
   function handleFormSubmit(event: React.FormEvent) {
