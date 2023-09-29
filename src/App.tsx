@@ -25,6 +25,8 @@ export default function App() {
     setProductList((initial: Products[]) => [...initial, item]);
   }
 
+  const [shoppingCart, setShoppingCart] = React.useState<Array<Products>>([]);
+
   const [siteSettings, setSiteSettings] = React.useState({
     header: true,
     logo: true,
@@ -43,7 +45,14 @@ export default function App() {
 
   return (
     <UserContext.Provider
-      value={{ siteSettings, setSiteSettings, productList, addNewProduct }}
+      value={{
+        siteSettings,
+        setSiteSettings,
+        productList,
+        addNewProduct,
+        shoppingCart,
+        setShoppingCart,
+      }}
     >
       <BrowserRouter>
         <Routes>
@@ -62,6 +71,7 @@ export default function App() {
             }
           ></Route>
           <Route path="/product/:id" element={<SingleProductPage />}></Route>
+          <Route path="/checkout" element={<Checkout />}></Route>
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>

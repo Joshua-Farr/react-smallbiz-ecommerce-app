@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import CheckoutSummary from "../../components/CheckoutSummary/CheckoutSummary";
 import "./checkout.css";
 
@@ -5,7 +6,9 @@ export default function Checkout() {
   return (
     <div className="checkout-page-wrapper">
       <div className="checkout-left-side">
-        <h2 className="sidebar-logo">MintRoad</h2>
+        <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
+          <h2 className="sidebar-logo">MintRoad</h2>
+        </NavLink>
         <>
           <form className="checkout-form">
             <div className="payment-detail-wrapper">

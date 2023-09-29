@@ -32,10 +32,13 @@
 
 .order-summary {
   text-align: left;
+  font-weight: 700;
+  margin-bottom: 0.75em;
 }
 
 .order-details {
   width: 100%;
+  padding: 1.5em;
 }
 
 .additional-details {
@@ -81,4 +84,15 @@
   height: 14px !important;
   width: 14px !important;
   color: #19a066;
+}
+
+.order-summary-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-top: .5em; */
+}
+
+.order-summary-items-elements {
+  list-style-type: none;
 }

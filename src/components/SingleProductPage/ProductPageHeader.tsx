@@ -8,7 +8,9 @@ export default function ProductPageHeader() {
       <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
         <h2 className="logo">MintRoad</h2>
       </NavLink>
-      <ShoppingBagOutlinedIcon />
+      <NavLink to="/checkout">
+        <ShoppingBagOutlinedIcon />
+      </NavLink>
     </div>
   );
 }

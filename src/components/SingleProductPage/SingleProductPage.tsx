@@ -1,11 +1,12 @@
 import ProductGallery from "../ProductGallery/ProductGallery";
 import StarIcon from "@mui/icons-material/Star";
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import "./SingleProductPage.css";
 import { Products } from "../../Types";
 import { useParams } from "react-router-dom";
 import { productTestData } from "../../ProductTestData";
 import ProductPageHeader from "./ProductPageHeader";
+import { UserContext } from "../../App";
 
 export default function SingleProductPage() {
   const [quantityWanted, setQuanityWanted] = useState(0);
@@ -13,8 +14,17 @@ export default function SingleProductPage() {
     productTestData[useParams().id - 1]
   );
 
+  const { shoppingCart, setShoppingCart } = useContext(UserContext);
+
   function addToCart(amount: number, product: Products) {
-    console.log(`${amount} of ${product.name} added to the cart!`);
+    setShoppingCart((cart: Products[]) => {
+      let newCart = shoppingCart;
+      for (let i = 0; i < quantityWanted; i++) {
+        newCart = [...newCart, product];
+      }
+      console.log(`${amount} of ${product.name} added to the cart!`);
+      return newCart;
+    });
     setQuanityWanted(0);
   }
 
