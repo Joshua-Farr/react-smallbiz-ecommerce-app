@@ -17,7 +17,7 @@ export default function UserWebpage(settings: StoreSettings) {
         name={product.name}
         description={product.description}
         id={product.id}
-        image={product.productImages}
+        image={product.productImages[0]}
         className="product-card"
       />
     );

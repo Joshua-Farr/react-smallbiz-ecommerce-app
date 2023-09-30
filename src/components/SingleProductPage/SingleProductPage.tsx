@@ -8,7 +8,7 @@ import { productTestData } from "../../ProductTestData";
 import ProductPageHeader from "./ProductPageHeader";
 import { UserContext } from "../../App";
 
-export default function SingleProductPage() {
+export default function SingleProductPage(props: number) {
   const [quantityWanted, setQuanityWanted] = useState(0);
   const { shoppingCart, setShoppingCart, productList } =
     useContext(UserContext);
@@ -58,12 +58,15 @@ export default function SingleProductPage() {
         <div className="gallery-center">
           <div className="product-gallery-wrapper">
             <ProductGallery
-              images={[
-                "https://images.pexels.com/photos/3844788/pexels-photo-3844788.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/4386404/pexels-photo-4386404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/6373758/pexels-photo-6373758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-              ]}
+              images={
+                product.productImages
+                //   [
+                //   "https://images.pexels.com/photos/3844788/pexels-photo-3844788.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                //   "https://images.pexels.com/photos/4386404/pexels-photo-4386404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                //   "https://images.pexels.com/photos/6373758/pexels-photo-6373758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                //   "https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                // ]
+              }
             />
 
             <div className="product-information">

@@ -16,7 +16,9 @@ export default function ProductCard(product: ProductCardProps) {
       style={{ textDecoration: "none", color: `black` }}
     >
       <div className="product-card">
-        <div className="product-card-img"></div>
+        <div className="product-card-img">
+          <img src={product.image} alt="" />
+        </div>
         <h3 className="product-card-product-title">{product.name}</h3>
         <h4 className="product-card-product-price">${product.price}</h4>
         <p className="product-card-product-description">
