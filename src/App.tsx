@@ -42,6 +42,8 @@ export default function App() {
   const [productList, setProductList] =
     React.useState<Array<Products>>(productTestData);
 
+  console.log(productList);
+
   return (
     <UserContext.Provider
       value={{

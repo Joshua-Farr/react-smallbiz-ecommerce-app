@@ -11,7 +11,7 @@ type PopoutProps = {
 };
 
 export default function AddProductPopout(closebtn: PopoutProps) {
-  const { addNewProduct } = React.useContext(UserContext);
+  const { addNewProduct, productList } = React.useContext(UserContext);
   const [productDetails, setProductDetails] = React.useState<Products>({
     name: "",
     description: "",
@@ -22,7 +22,7 @@ export default function AddProductPopout(closebtn: PopoutProps) {
     files: ["joe"],
     sales: 0,
     revenue: 0,
-    id: Math.floor(Math.random() * 100),
+    id: productList.length + 1,
     key: Math.floor(Math.random() * 100),
   });
 

@@ -13,12 +13,16 @@ export default function SingleProductPage() {
   const { shoppingCart, setShoppingCart, productList } =
     useContext(UserContext);
 
-  console.log(useParams.id);
+  console.log(productList);
+
+  // console.log(useParams().id);
   const [product, setProduct] = useState<Products | null>(
-    productTestData[useParams().id - 1]
+    productList[useParams().id - 1]
 
     // findProduct(useParams().id)
   );
+
+  console.log(productList[useParams().id - 1]);
 
   function findProduct(id: number): Products {
     productList.forEach((product: Products) => {

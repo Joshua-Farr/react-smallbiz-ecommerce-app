@@ -16,10 +16,11 @@ export default function Header(clickMe: HeaderProps) {
       <h2 className="page-title">{clickMe.title}</h2>
       {clickMe.buttons && (
         <div className="header-icons">
-          <SearchRoundedIcon className="mui-icon" />
           <NotificationsNoneRoundedIcon className="mui-icon" />
           <AddCircleIcon
-            onClick={() => clickMe.toggleProductAdd()}
+            onClick={() => {
+              clickMe?.toggleProductAdd();
+            }}
             className="mui-icon plus-icon"
           />
         </div>
