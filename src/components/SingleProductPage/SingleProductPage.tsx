@@ -4,57 +4,48 @@ import { useState, useContext } from "react";
 import "./SingleProductPage.css";
 import { Products } from "../../Types";
 import { useParams } from "react-router-dom";
-import { productTestData } from "../../ProductTestData";
 import ProductPageHeader from "./ProductPageHeader";
 import { UserContext } from "../../App";
 
-export default function SingleProductPage(props: number) {
-  const [quantityWanted, setQuanityWanted] = useState(0);
+export default function SingleProductPage() {
+  const [quantityWanted, setQuantityWanted] = useState<number>(0);
   const { shoppingCart, setShoppingCart, productList } =
     useContext(UserContext);
 
-  console.log(productList);
+  const [product] = useState<Products>(productList[useParams().id - 1]);
 
-  // console.log(useParams().id);
-  const [product, setProduct] = useState<Products | null>(
-    productList[useParams().id - 1]
-
-    // findProduct(useParams().id)
-  );
-
-  console.log(productList[useParams().id - 1]);
-
-  function findProduct(id: number): Products {
-    productList.forEach((product: Products) => {
-      if (product.id === id) {
-        return product;
-      }
-    });
-  }
+  // function findProduct(id: number): void {
+  //   productList.forEach((product: Products) => {
+  //     if (product.id === id) {
+  //       return product;
+  //     }
+  //   });
+  // }
 
   function addToCart(amount: number, product: Products) {
-    setShoppingCart((cart: Products[]) => {
+    setShoppingCart(() => {
       let newCart = shoppingCart;
-      for (let i = 0; i < quantityWanted; i++) {
+      for (let i = 0; i < amount; i++) {
         newCart = [...newCart, product];
       }
       console.log(`${amount} of ${product.name} added to the cart!`);
       return newCart;
     });
-    setQuanityWanted(0);
+    setQuantityWanted(0);
   }
 
   function updateQuantityWanted(amount: number) {
     if (quantityWanted === 0 && amount === -1) {
       return;
     }
-    setQuanityWanted((quantity) => quantity + amount);
+    setQuantityWanted((quantity) => quantity + amount);
   }
 
   return (
     <>
       <div className="overall-screen-wrapper">
-        <ProductPageHeader className="gallery-header" />
+        {/* <ProductPageHeader className="gallery-header" /> */}
+        <ProductPageHeader />
         <div className="gallery-center">
           <div className="product-gallery-wrapper">
             <ProductGallery
@@ -114,7 +105,9 @@ export default function SingleProductPage(props: number) {
                 className="add-to-cart-btn"
                 onClick={() => {
                   const productWanted = product;
-                  addToCart(quantityWanted, productWanted);
+                  if (productWanted) {
+                    addToCart(quantityWanted, productWanted);
+                  }
                 }}
                 disabled={quantityWanted === 0 ? true : false}
               >
