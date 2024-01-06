@@ -7,7 +7,7 @@ import ProductListDisplay from "../../components/ProductListDisplay/ProductListD
 import CreateAProductCard from "../../components/CreateAProduct/CreateAProductCard";
 
 export default function Store() {
-  const [hasProduct, setHasProduct] = useState(true);
+  const [hasProduct] = useState(true);
   const [showAddProduct, setShowAddProduct] = useState(false);
 
   function toggleProductAdd() {

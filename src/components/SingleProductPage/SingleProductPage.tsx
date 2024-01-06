@@ -14,14 +14,6 @@ export default function SingleProductPage() {
 
   const [product] = useState<Products>(productList[useParams().id - 1]);
 
-  // function findProduct(id: number): void {
-  //   productList.forEach((product: Products) => {
-  //     if (product.id === id) {
-  //       return product;
-  //     }
-  //   });
-  // }
-
   function addToCart(amount: number, product: Products) {
     setShoppingCart(() => {
       let newCart = shoppingCart;
@@ -109,7 +101,7 @@ export default function SingleProductPage() {
                     addToCart(quantityWanted, productWanted);
                   }
                 }}
-                disabled={quantityWanted === 0 ? true : false}
+                disabled={quantityWanted === 0}
               >
                 Add to cart
               </button>

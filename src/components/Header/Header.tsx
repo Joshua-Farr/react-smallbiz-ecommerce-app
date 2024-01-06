@@ -1,4 +1,3 @@
-import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 
@@ -19,7 +18,9 @@ export default function Header(clickMe: HeaderProps) {
           <NotificationsNoneRoundedIcon className="mui-icon" />
           <AddCircleIcon
             onClick={() => {
-              clickMe?.toggleProductAdd();
+              if (clickMe.toggleProductAdd) {
+                clickMe?.toggleProductAdd();
+              }
             }}
             className="mui-icon plus-icon"
           />

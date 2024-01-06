@@ -2,8 +2,6 @@ import ProductCard from "../ProductCard/ProductCard";
 import "./UserWebpage.css";
 import { StoreSettings } from "../../Types";
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
-
 import { UserContext } from "../../App.tsx";
 import { Products } from "../../Types.tsx";
 

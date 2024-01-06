@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, DragEvent } from "react";
 import "./DragDropFile.css";
 
 type DragProps = {
@@ -6,21 +6,21 @@ type DragProps = {
 };
 
 export default function DragDropFile(props: DragProps) {
-  const [theFiles, setTheFiles] = useState();
+  const [theFiles, setTheFiles] = useState<FileList | undefined>();
 
-  const handleDragOver = (event: Event) => {
+  const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     console.log("Dragging over!");
   };
 
-  const handleDrop = (event: e) => {
+  const handleDrop = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     setTheFiles(event.dataTransfer.files);
     console.log("File Uploaded!");
     console.log("UPLOADED FILE: ", event.dataTransfer.files);
   };
 
-  const getFileNames = (fileList: FileList): string[] => {
+  const getFileNames = (fileList: FileList): string => {
     let nameList = [];
     for (const file of fileList) {
       nameList.push(file.name);
@@ -28,8 +28,8 @@ export default function DragDropFile(props: DragProps) {
     return nameList.join(", \n");
   };
 
-  // Add server upload logic when backend is built
-  const handleUpload = () => {};
+  // vvv Add server upload logic here when backend is built vvv
+  // const handleUpload = () => {};
 
   return (
     <div
