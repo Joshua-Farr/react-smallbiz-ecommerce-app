@@ -5,19 +5,19 @@ import { StoreSettings } from "../../Types";
 import "./DesignSideBar.css";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
-interface DesignSideBarProps {
-  setNewSiteSettings: (key: string, value: any) => void;
-  siteSettings: {
-    header: boolean;
-    logo: boolean;
-    name: boolean;
-    description: boolean;
-    descriptionText: string;
-    subscriberForm: boolean;
-    thumbnailSize: string;
-    showProductDetails: boolean;
-  };
-}
+// interface DesignSideBarProps {
+//   setNewSiteSettings: (key: string, value: any) => void;
+//   siteSettings: {
+//     header: boolean;
+//     logo: boolean;
+//     name: boolean;
+//     description: boolean;
+//     descriptionText: string;
+//     subscriberForm: boolean;
+//     thumbnailSize: string;
+//     showProductDetails: boolean;
+//   };
+// }
 
 export default function DesignSideBarReact({
   setNewSiteSettings,
