@@ -39,7 +39,7 @@ export default function UserWebpage(settings: StoreSettings) {
           MR
         </div>
       )}
-      {settings.name && <h1 className="store-name">Store Name Here</h1>}
+      {settings.name && <h1 className="store-name">E-commerce Courses</h1>}
       {settings.description && (
         <p className="store-description">{settings.descriptionText}</p>
       )}
